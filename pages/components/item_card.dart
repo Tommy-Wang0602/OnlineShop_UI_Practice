@@ -4,7 +4,7 @@ import 'package:shop_ui_practice_app/models/product.dart';
 
 class ItemCard extends StatelessWidget {
   final Product product;
-  void Function() press;
+  Function() press;
   ItemCard({
     required this.product,
     required this.press,
@@ -27,7 +27,8 @@ class ItemCard extends StatelessWidget {
                 color: product.color,
                 borderRadius: BorderRadius.circular(16),
               ),
-              child: Image.asset(product.image),
+              child:
+                  Hero(tag: '${product.id}', child: Image.asset(product.image)),
             ),
           ),
           Padding(

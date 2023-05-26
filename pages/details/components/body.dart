@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shop_ui_practice_app/constrain.dart';
 import 'package:shop_ui_practice_app/models/product.dart';
-import 'package:shop_ui_practice_app/pages/details/components/cart_counter.dart';
+import 'package:shop_ui_practice_app/pages/details/components/add_to_cart.dart';
 import 'package:shop_ui_practice_app/pages/details/components/color_and_size.dart';
+import 'package:shop_ui_practice_app/pages/details/components/count_with_fav_button.dart';
 import 'package:shop_ui_practice_app/pages/details/components/descropition.dart';
 import 'package:shop_ui_practice_app/pages/details/components/product_title_with_Image.dart';
 
@@ -39,23 +39,12 @@ class DetailBodyPage extends StatelessWidget {
                   child: Column(
                     children: [
                       ColorAndSize(product: product),
+                      const SizedBox(height: kDefaultPaddin / 2),
                       Description(product: product),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          const CartCouter(),
-                          Container(
-                            padding: const EdgeInsets.all(8),
-                            height: 32,
-                            width: 32,
-                            decoration: const BoxDecoration(
-                              color: Color(0xFFFF6464),
-                              shape: BoxShape.circle,
-                            ),
-                            child: SvgPicture.asset('assets/icons/heart.svg'),
-                          )
-                        ],
-                      ),
+                      const SizedBox(height: kDefaultPaddin / 2),
+                      const CounterWithFavButton(),
+                      const SizedBox(height: kDefaultPaddin / 2),
+                      AddToCart(product: product)
                     ],
                   ),
                 ),

@@ -1,4 +1,4 @@
-# 📖 ChatRoom UI Practice
+# 📖 OnlineShop UI Practice
 
 ## About
 
